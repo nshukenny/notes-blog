@@ -20,9 +20,9 @@ function Home() {
   const [sortField, setSortField] = useState('id');
   const [sortOrder, setSortOrder] = useState('asc');
   const [filteredNotes, setFilteredNotes] = useState(notes);
+  const [nextId, setNextId] = useState(notes.length > 0 ? notes[notes.length - 1].id + 1 : 1);
   const firstRef = useRef(null);
   const lastRef = useRef(null);
-  
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -49,13 +49,24 @@ function Home() {
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addNote({ id: notes[notes.length - 1].id + 1, title, body }));
+    if (!title.trim() || !body.trim()) {
+     
+      return;
+    }
+
+    dispatch(addNote({ id: nextId, title, body }));
+    setTitle(''); 
+    setBody(''); 
     firstRef.current.value = '';
     lastRef.current.value = '';
+    setNextId(nextId + 1);
   };
 
   const handleDelete = (id) => {
     dispatch(deleteNote({ id }));
+    if (id === nextId - 1) {
+      setNextId(nextId - 1);
+    }
   };
 
   const handleSearch = () => {
