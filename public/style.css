@@ -1,0 +1,41 @@
+/* form{
+    width: 75%;
+    height: 10%;
+    border-radius: 5px;
+    margin: 5px 0 5px 0;
+    padding: 19px;
+    border-style: groove;
+}
+.form-control2{
+   margin-left: 5%;
+   width: 70%;
+   border: none;
+   border-style: none;
+   padding-top: 20px;
+   border-bottom: 1px solid ;
+}
+.form-control1{
+    margin-left: 5%;
+    padding-bottom: 10%;
+    width: 70%;
+    border: none;
+    padding-top: 20px;
+    border-bottom: 1px solid ;
+}
+.btn-primary{
+    background-color:rgb(27, 171, 149);
+    border-color: azure;
+}
+.btn-secondary{
+    background-color: rgb(17, 110, 250);
+    border-color: rgb(17, 110, 250);
+}
+.btn-secondary2{
+    margin-left: 2px;
+    color: white;
+    background-color: red;
+    border-color: red;
+}
+.bi{
+    margin-right: 0;
+} */
